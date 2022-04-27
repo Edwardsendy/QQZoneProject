@@ -1,6 +1,6 @@
 package com.edward.myssm.filters;
 
-import com.atguigu.myssm.trans.TransactionManager;
+import com.edward.myssm.trans.TransactionManager;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

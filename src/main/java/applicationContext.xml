@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <beans>
+    <bean id="userBasicDao" class="com.edward.QQZoneProject.dao.impl.UserBasicDAOImpl"/>
+    <bean id="topicDao" class="com.edward.QQZoneProject.dao.impl.TopicDAOImpl"/>
+    <bean id="userBasicService" class="com.edward.QQZoneProject.servic.impl.UserBasicServiceImpl">
+        <property name="userBasicDAO" ref="userBasicDAO"/>
+    </bean>
 
-    <bean id="fruitDAO" class="com.atguigu.fruit.dao.impl.FruitDAOImpl"/>
-    <bean id="fruitService" class="com.atguigu.fruit.service.impl.FruitServiceImpl">
-        <!-- property标签用来表示属性；name表示属性名；ref表示引用其他bean的id值-->
-        <property name="fruitDAO" ref="fruitDAO"/>
+    <bean id="topicService" class="com.edward.QQZoneProject.servic.impl.TopicServiceImpl">
+        <property name="topicDAO" ref="topicDAO"/>
     </bean>
-    <bean id="fruit" class="com.atguigu.fruit.controllers.FruitController">
-        <property name="fruitService" ref="fruitService"/>
+
+    <bean id="user" class="com.edward.QQZoneProject.controller.UserController">
+        <property name="userBasicService" ref="userBasicService"/>
+        <property name="topService" ref="topicService"/>
     </bean>
+
+
+
 </beans>
 <!--
 Node 节点

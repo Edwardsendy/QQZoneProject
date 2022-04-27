@@ -1,6 +1,6 @@
 package com.edward.myssm.trans;
 
-import com.atguigu.myssm.basedao.ConnUtil;
+import com.edward.myssm.basedao.ConnUtil;
 
 import java.sql.Connection;
 import java.sql.SQLException;
