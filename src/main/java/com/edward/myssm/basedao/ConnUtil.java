@@ -11,9 +11,9 @@ public class ConnUtil {
     //private static ThreadLocal<Object> threadLocal3 = new ThreadLocal<>();
 
     public static final String DRIVER = "com.mysql.jdbc.Driver" ;
-    public static final String URL = "jdbc:mysql://localhost:3306/fruitdb?useUnicode=true&characterEncoding=utf-8&useSSL=false";
+    public static final String URL = "jdbc:mysql://localhost:3306/qqzonedb?useUnicode=true&characterEncoding=utf-8&useSSL=false";
     public static final String USER = "root";
-    public static final String PWD = "123456" ;
+    public static final String PWD = "root123" ;
 
     private static Connection createConn(){
         try {
@@ -43,7 +43,8 @@ public class ConnUtil {
         }
         if(!conn.isClosed()){
             conn.close();
-            threadLocal.set(null);
+            //threadLocal.set(null);
+            threadLocal.remove();
         }
     }
 }

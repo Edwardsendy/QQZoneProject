@@ -3,17 +3,22 @@ package com.edward.QQZoneProject.pojo;
 import java.util.List;
 
 public class UserBasic {
-    private  Integer id;
-    private  String loginId;
-    private  String nickName;
-    private  String pwd;
-    private  String headImg;
+    private Integer id ;
+    private String loginId ;
+    private String nickName ;
+    private String pwd ;
+    private String headImg ;
 
-    private UserDetail userDetail;
-    private List<Topic> topicList;
-    private List<UserBasic> friendList;
+    private UserDetail userDetail ;     //1:1
+    private List<Topic> topicList ;     //1:N
+    private List<UserBasic> friendList ;//M:N
+
 
     public UserBasic(){}
+
+    public UserBasic(Integer id) {
+        this.id = id;
+    }
 
     public Integer getId() {
         return id;
@@ -78,6 +83,4 @@ public class UserBasic {
     public void setFriendList(List<UserBasic> friendList) {
         this.friendList = friendList;
     }
-
-
 }

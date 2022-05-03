@@ -1,18 +1,22 @@
 package com.edward.QQZoneProject.pojo;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 public class Topic {
-    private Integer id;
-    private String title;
-    private String content;
-    private Date topicDate;
-    private UserBasic author;
+    private Integer id ;
+    private String title ;
+    private String content ;
+    private Date topicDate ;
+    private UserBasic author ;          //M:1
 
-    private HostReply hostReply;
-    private List<Reply> replyList;
+    private List<Reply> replyList ;     //1:N
+
     public Topic(){}
+
+    public Topic(Integer id) {
+        this.id = id;
+    }
 
     public Integer getId() {
         return id;
@@ -52,14 +56,6 @@ public class Topic {
 
     public void setAuthor(UserBasic author) {
         this.author = author;
-    }
-
-    public HostReply getHostReply() {
-        return hostReply;
-    }
-
-    public void setHostReply(HostReply hostReply) {
-        this.hostReply = hostReply;
     }
 
     public List<Reply> getReplyList() {
